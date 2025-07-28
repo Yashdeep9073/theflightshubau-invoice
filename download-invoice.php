@@ -249,8 +249,8 @@ try {
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
     $pdf->SetXY(140, 43);
-    $labelWidth = $pdf->GetStringWidth('NZBN No: ') + 1; // Calculate width of "Date:" with small padding
-    $pdf->Cell($labelWidth, 10, 'NZBN No: ', 0, 0); // Render "Date:" in black, normal font with exact width
+    $labelWidth = $pdf->GetStringWidth('ABN Nco: ') + 1; // Calculate width of "Date:" with small padding
+    $pdf->Cell($labelWidth, 10, 'ACN No: ', 0, 0); // Render "Date:" in black, normal font with exact width
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Set font to bold
     $pdf->Cell(0, 10, $companySettings['bz_number'], 0, 1); // Render date in bold blue, no gap
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
@@ -470,11 +470,11 @@ try {
     $yPos = 195;
     $pdf->SetFont('FuturaBT-Medium', '', 10);
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'All the payments must be paid in NZD by the due date unless mentioned or credit limit offered.', 0, 1);
+    $pdf->Cell(0, 10, 'All the payments must be paid in aud by the due date unless mentioned or credit limit offered.', 0, 1);
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'Any payments made by bank credit card will attract 2.5% CC fee.', 0, 1);
+    $pdf->Cell(0, 10, 'Any payments made by credit card will attract a 2.5% cc fee.', 0, 1);
     $yPos += 10;
 
     $pdf->SetFont('FuturaBT-Medium', '', 10);
@@ -483,20 +483,20 @@ try {
     $yPos += 7;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ACCOUNT NAME: THE FLIGHTSHUB PVT LTD', 0, 1);
+    $pdf->Cell(0, 10, 'ACCOUNT NAME: THE FLIGHTSHUB AUSTRALIA PVT LTD', 0, 1);
     $yPos += 5;
 
     $pdf->SetTextColor(14, 139, 206);
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ANZ :: 01-1842-0636659-00', 0, 1);
+    $pdf->Cell(0, 10, 'ANZ Bank : BSB : 014219 ACC#  :  159920044', 0, 1);
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ASB :: 12-3142-0494687-00', 0, 1);
+    $pdf->Cell(0, 10, 'CBA Bank : BSB : 062692 ACC# :  78136836', 0, 1);
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'BNZ :: 02-0528-0567582-000', 0, 1);
+    $pdf->Cell(0, 10, 'NAB Bank : BSB : 084034  ACC#  : 401146158', 0, 1);
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
     $pdf->SetXY(70, 240);
     $pdf->SetTextColor(0, 0, 0);
@@ -530,7 +530,6 @@ try {
             $pdf->Image($stampPath, 60, 145, 80, 35);
         }
     }
-
 
     // Output final PDF
     $pdf->Output('D', ucfirst(str_replace(" ", "-", $invoice['invoice_title'])) . "-" . $invoice['invoice_number'] . '.pdf');

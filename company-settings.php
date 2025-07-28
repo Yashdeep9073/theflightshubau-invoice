@@ -464,14 +464,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label class="form-label">BZ Number</label>
+                                                    <label class="form-label">ABN Number</label>
                                                     <input type="text" class="form-control" name="bz_number"
                                                         value="<?= isset($companySettings['bz_number']) ? $companySettings['bz_number'] : "" ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label class="form-label">GST Number</label>
+                                                    <label class="form-label">ACN Number</label>
                                                     <input type="text" class="form-control" name="gst_number"
                                                         value="<?= isset($companySettings['gst_number']) ? $companySettings['gst_number'] : "" ?>">
                                                 </div>
