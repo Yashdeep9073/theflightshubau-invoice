@@ -51,9 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editAdminId'])) {
   try {
 
 
-    echo '<pre>';
-    print_r($_POST);
-    exit;
+    // echo '<pre>';
+    // print_r($_POST);
+    // exit;
     // Sanitize and validate input
     $editAdminId = filter_input(INPUT_POST, 'editAdminId', FILTER_SANITIZE_NUMBER_INT);
     $editAdminName = filter_input(INPUT_POST, 'editAdminName', FILTER_SANITIZE_STRING);
