@@ -238,7 +238,7 @@ try {
 
     // Render "PVTLTD." in rgba(14, 139, 206, 1)
     $pdf->SetTextColor(14, 139, 206); // Set text color to rgba(14, 139, 206, 1)
-    $pdf->Cell(50, 10, 'PVT. LIMITED.', 0, 0); // Adjusted width to 50 for "PVTLTD."
+    $pdf->Cell(50, 10, 'PVT. LIMITED', 0, 0); // Adjusted width to 50 for "PVTLTD."
 
     // Reset text color to black for subsequent text
     $pdf->SetTextColor(0, 0, 0);
