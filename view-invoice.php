@@ -222,42 +222,42 @@ try {
 
 
     // Invoice Info (top-right, adjust based on template)
-    $pdf->SetFont('FuturaBT-Medium', '', 22); // Set font to FuturaBT-Medium
+    $pdf->SetFont('FuturaBT-Medium', '', 20); // Set font to FuturaBT-Medium
     $pdf->SetXY(20, 45); // Set position for text
 
     // Render "THE" in rgba(14, 139, 206, 1)
     $pdf->SetTextColor(14, 139, 206); // Set text color to rgba(14, 139, 206, 1)
-    $pdf->Cell(15, 10, 'THE', 0, 0); // Increased width to 25 to prevent clipping
+    $pdf->Cell(13, 10, 'THE', 0, 0); // Increased width to 25 to prevent clipping
 
     // Render "FLIGHTSHUB" in #f9522b (RGB: 249, 82, 43)
     $pdf->SetTextColor(249, 82, 43); // Set text color to #f9522b
-    $pdf->Cell(30, 10, 'FLIGHTS', 0, 0); // Increased width to 65 for longer text
+    $pdf->Cell(27, 10, 'FLIGHTS', 0, 0); // Increased width to 65 for longer text
 
     $pdf->SetTextColor(14, 139, 206); // Set text color to rgba(14, 139, 206, 1)
-    $pdf->Cell(18, 10, 'HUB', 0, 0); // Increased width to 65 for longer text
+    $pdf->Cell(16, 10, 'HUB', 0, 0); // Increased width to 65 for longer text
 
     // Render "PVTLTD." in rgba(14, 139, 206, 1)
     $pdf->SetTextColor(14, 139, 206); // Set text color to rgba(14, 139, 206, 1)
-    $pdf->Cell(50, 10, 'PVT. LIMITED', 0, 0); // Adjusted width to 50 for "PVTLTD."
+    $pdf->Cell(40, 10, 'AUSTRALIA PTY.LTD', 0, 0); // Adjusted width to 50 for "PVTLTD."
 
     // Reset text color to black for subsequent text
     $pdf->SetTextColor(0, 0, 0);
 
     $pdf->SetFont('FuturaBT-Medium', '', 8); // Set font to bold
     $pdf->SetXY(20, 50);
-    $pdf->Cell(22, 10, $companySettings['address'] . " " . $companySettings['state'] . "," . $companySettings['country'], 0, 0); // Render "Invoice No:" in black, normal font
+    $pdf->Cell(22, 10, $companySettings['address'] . " " . $companySettings['state'] . "," . $companySettings['city'] . "," . $companySettings['country'] . "," . $companySettings['postal_code'], 0, 0); // Render "Invoice No:" in black, normal font
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
     $pdf->SetXY(140, 43);
-    $labelWidth = $pdf->GetStringWidth('NZBN No: ') + 1; // Calculate width of "Date:" with small padding
-    $pdf->Cell($labelWidth, 10, 'NZBN No: ', 0, 0); // Render "Date:" in black, normal font with exact width
+    $labelWidth = $pdf->GetStringWidth('ABN  No: ') + 1; // Calculate width of "Date:" with small padding
+    $pdf->Cell($labelWidth, 10, 'ABN No: ', 0, 0); // Render "Date:" in black, normal font with exact width
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Set font to bold
     $pdf->Cell(0, 10, $companySettings['bz_number'], 0, 1); // Render date in bold blue, no gap
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
     $pdf->SetXY(140, 49);
-    $labelWidth = $pdf->GetStringWidth('GST No: ') + 1; // Calculate width of "Date:" with small padding
-    $pdf->Cell($labelWidth, 10, 'GST No: ', 0, 0); // Render "Date:" in black, normal font with exact width
+    $labelWidth = $pdf->GetStringWidth('ACN No: ') + 1; // Calculate width of "Date:" with small padding
+    $pdf->Cell($labelWidth, 10, 'ACN No: ', 0, 0); // Render "Date:" in black, normal font with exact width
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Set font to bold
     $pdf->Cell(0, 10, $companySettings['gst_number'], 0, 1); // Render date in bold blue, no gap
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
@@ -464,7 +464,7 @@ try {
 
     // Line invoice not
     $pdf->SetLineWidth(0.1);
-    $pdf->Line(20, 184, 190, 184);  
+    $pdf->Line(20, 184, 190, 184);
 
     // Invoice Note
     $pdf->SetFont('FuturaBT-Medium', '', 12);
@@ -489,20 +489,20 @@ try {
     $yPos += 7;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ACCOUNT NAME: THE FLIGHTSHUB PVT. LTD', 0, 1);
+    $pdf->Cell(0, 10, 'ACCOUNT NAME: The FlightsHub Australia PYT LTD', 0, 1);
     $yPos += 5;
 
     $pdf->SetTextColor(14, 139, 206);
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ANZ :: 01-1842-0636659-00', 0, 1);
+    $pdf->Cell(0, 10, 'ANZ Bank: BSB: 014219, ACC#: 159920044', 0, 1);
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ASB :: 12-3142-0494687-00', 0, 1);
+    $pdf->Cell(0, 10, 'CBA Bank: BSB: 062692, ACC#: 78136836', 0, 1);
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'BNZ :: 02-0528-0567582-000', 0, 1);
+    $pdf->Cell(0, 10, 'NAB Bank: BSB: 084034, ACC#: 401146158', 0, 1);
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
     $pdf->SetXY(70, 240);
     $pdf->SetTextColor(0, 0, 0);
