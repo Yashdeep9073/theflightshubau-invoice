@@ -222,7 +222,7 @@ try {
 
 
     // Invoice Info (top-right, adjust based on template)
-    $pdf->SetFont('FuturaBT-Medium', '', 20); // Set font to FuturaBT-Medium
+    $pdf->SetFont('FuturaBT-Medium', '', 19); // Set font to FuturaBT-Medium
     $pdf->SetXY(20, 45); // Set position for text
 
     // Render "THE" in rgba(14, 139, 206, 1)
