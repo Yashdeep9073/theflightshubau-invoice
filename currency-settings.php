@@ -436,7 +436,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['edit'])) {
                                     <div class="col-lg-12">
                                         <div class="mb-3">
                                             <label class="form-label">Currency Name <span> *</span></label>
-                                            <input type="text" class="form-control" name="currencyName" required>
+                                            <input type="text" class="form-control" name="currencyName" placeholder="Enter Currency Name" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
