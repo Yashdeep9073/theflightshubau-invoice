@@ -245,7 +245,7 @@ try {
 
     $pdf->SetFont('FuturaBT-Medium', '', 8); // Set font to bold
     $pdf->SetXY(20, 50);
-    $pdf->Cell(22, 10, $companySettings['address'] . " " . $companySettings['state'] . "," . $companySettings['city'] . "," . $companySettings['country'] . "," . $companySettings['postal_code'], 0, 0); // Render "Invoice No:" in black, normal font
+    $pdf->Cell(22, 10, $companySettings['address'] . " " . $companySettings['city'] . "," . $companySettings['state'] . "," . $companySettings['country'] . "," . $companySettings['postal_code'], 0, 0); // Render "Invoice No:" in black, normal font
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
     $pdf->SetXY(140, 43);
