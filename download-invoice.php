@@ -480,7 +480,7 @@ try {
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'Any payments made by bank credit card will attract 2.5% CC fee.', 0, 1);
+    $pdf->Cell(0, 10, 'Any payments made by bank credit card will attract 2% CC fee. Amex will be 2.5%.', 0, 1);
     $yPos += 10;
 
     $pdf->SetFont('FuturaBT-Medium', '', 10);
@@ -491,18 +491,19 @@ try {
     $pdf->SetXY(25, $yPos);
     $pdf->Cell(0, 10, 'ACCOUNT NAME: The FlightsHub Australia PYT LTD', 0, 1);
     $yPos += 5;
-
     $pdf->SetTextColor(14, 139, 206);
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ANZ Bank: BSB: 014219, ACC#: 159920044', 0, 1);
+    $pdf->Cell(0, 10, 'ANZ Bank:    BSB: 014219    Account: 159920044', 0, 1);
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'CBA Bank: BSB: 062692, ACC#: 78136836', 0, 1);
+    $pdf->Cell(0, 10, 'CBA Bank:    BSB: 062692    Account: 78136836', 0, 1);
     $yPos += 5;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'NAB Bank: BSB: 084034, ACC#: 401146158', 0, 1);
+    $pdf->Cell(0, 10, 'NAB Bank:    BSB: 084034    Account: 401146158', 0, 1);
+    $yPos += 5;
+
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
     $pdf->SetXY(70, 240);
     $pdf->SetTextColor(0, 0, 0);

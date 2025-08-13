@@ -266,6 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForReminder']
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // 'ssl'
         $mail->Port = $port;
         $mail->setFrom($userName, $fromTitle);
+         $mail->addCC($userName);
         $mail->isHTML(true);
 
         // Prepare statement for updating reminder_count
@@ -549,6 +550,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForSend'])) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // 'ssl'
         $mail->Port = $port;
         $mail->setFrom($userName, $fromTitle);
+        $mail->addCC($userName);
         $mail->isHTML(true);
 
         // Prepare statement for updating reminder_count
