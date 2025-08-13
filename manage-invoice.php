@@ -266,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForReminder']
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // 'ssl'
         $mail->Port = $port;
         $mail->setFrom($userName, $fromTitle);
-         $mail->addCC($userName);
+        $mail->addCC($userName);
         $mail->isHTML(true);
 
         // Prepare statement for updating reminder_count
@@ -295,20 +295,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForReminder']
                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                     }
                     .header {
-                        background-color: #f9522b;
+                        background-color: #f4f4f4;
                         padding: 20px;
                         text-align: center;
-                        color: #ffffff;
+                        color: #333333;
                     }
                     .header img {
                         max-width: 150px;
                         height: auto;
-                        background-color: #fff;
+                        /* background-color: #fff; */
                         border-radius: 4px;
                     }
                     .header h1 {
                         margin: 10px 0;
                         font-size: 24px;
+                        font-weight: bolder;
+                        
                     }
                     .content {
                         padding: 20px;
@@ -410,7 +412,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForReminder']
                                 <tr>
                                     <td>{$invoiceNumber}</td>
                                     <td>{$dueDate}</td>
-                                    <td><strong>{$localizationSettings["currency_symbol"]}: {$totalAmount}</strong></td>
+                                    <td><strong>{$localizationSettings["currency_code"]} {$totalAmount}</strong></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -422,6 +424,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForReminder']
                     <div class="footer">
                         <p>&copy; {$currentYear} {$fromTitle}. All rights reserved.</p>
                         <p>{$address1} <a href='mailto:{$supportEmail}'>{$supportEmail}</a></p>
+                          <p>ABN No: {$companySettings['bz_number']}</p>
                         <p>
                             <a href='{$linkedin}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/174/174857.png ' alt='LinkedIn'></a>
                             <a href='{$instagram}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/2111/2111463.png ' alt='Instagram'></a>
@@ -550,7 +553,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForSend'])) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // 'ssl'
         $mail->Port = $port;
         $mail->setFrom($userName, $fromTitle);
-        $mail->addCC($userName);
+        //$mail->addCC($userName);
         $mail->isHTML(true);
 
         // Prepare statement for updating reminder_count
@@ -579,20 +582,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForSend'])) {
                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                     }
                     .header {
-                        background-color: #f9522b;
+                        background-color: #f4f4f4;
                         padding: 20px;
                         text-align: center;
-                        color: #ffffff;
+                        color: #333333;
                     }
                     .header img {
                         max-width: 150px;
                         height: auto;
-                        background-color: #fff;
+                        /* background-color: #fff; */
                         border-radius: 4px;
                     }
                     .header h1 {
                         margin: 10px 0;
                         font-size: 24px;
+                        font-weight: bolder;
+
                     }
                     .content {
                         padding: 20px;
@@ -694,7 +699,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForSend'])) {
                                 <tr>
                                     <td>{$invoiceNumber}</td>
                                     <td>{$travel_date}</td>
-                                    <td><strong>{$localizationSettings["currency_symbol"]}: {$totalAmount}</strong></td>
+                                    <td><strong>{$localizationSettings["currency_code"]} {$totalAmount}</strong></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -706,6 +711,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForSend'])) {
                     <div class="footer">
                         <p>&copy; {$currentYear} {$fromTitle}. All rights reserved.</p>
                         <p>{$address1} <a href='mailto:{$supportEmail}'>{$supportEmail}</a></p>
+                        <p>ABN No: {$companySettings['bz_number']}</p>
                         <p>
                             <a href='{$linkedin}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/174/174857.png ' alt='LinkedIn'></a>
                             <a href='{$instagram}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/2111/2111463.png ' alt='Instagram'></a>
