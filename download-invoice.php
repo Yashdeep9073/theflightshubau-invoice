@@ -238,7 +238,7 @@ try {
 
     // Render "PVTLTD." in rgba(14, 139, 206, 1)
     $pdf->SetTextColor(14, 139, 206); // Set text color to rgba(14, 139, 206, 1)
-    $pdf->Cell(40, 10, 'AUSTRALIA PTY.LTD', 0, 0); // Adjusted width to 50 for "PVTLTD."
+    $pdf->Cell(40, 10, 'AUSTRALIA PTY.LTD.', 0, 0); // Adjusted width to 50 for "PVTLTD."
 
     // Reset text color to black for subsequent text
     $pdf->SetTextColor(0, 0, 0);
@@ -322,7 +322,7 @@ try {
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
     $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to normal
 
-    $pdf->SetFont('FuturaBT-Medium', '', 14); // Reset font to norma
+    $pdf->SetFont('FuturaBT-Medium', '', 12); // Reset font to norma
     $pdf->SetXY(20, 101);
     $pdf->MultiCell(90, 8, $invoice['customer_name'] . "," ?? 'N/A', 0, 'L');
     $pdf->SetXY(140, 106);
@@ -339,7 +339,7 @@ try {
     $formatted_address = $first_line . ($second_line ? "\n" . $second_line : '');
 
     // Set font and calculate width
-    $pdf->SetFont('FuturaBT-Medium', '', 14);
+    $pdf->SetFont('FuturaBT-Medium', '', 12);
     $width = max($pdf->GetStringWidth($first_line), $pdf->GetStringWidth($second_line)) + 5; // Use widest line for width
     $width = max($width, 90); // Minimum width of 90
 
@@ -398,12 +398,12 @@ try {
         $pdf->SetXY(20, 130);
         $pdf->Cell(0, $lineHeight, $invoice['airline_name'], 0, 1); // First line: Airline name
         $pdf->SetFont('FuturaBT-Medium', '', 9.5);
-        $pdf->SetXY(20, 136);
+        $pdf->SetXY(20, 135);
         $pdf->Cell(0, $lineHeight, "(" . $invoice['from_location'] . ") -", 0, 1); // Second line: Route
         $pdf->SetXY(20, 140);
         $pdf->Cell(0, $lineHeight, "(" . $invoice['to_location'] . ")", 0, 1); // Second line: Route
 
-        $pdf->SetFont('FuturaBT-Medium', '', 14);
+        $pdf->SetFont('FuturaBT-Medium', '', 13);
         $pdf->SetXY(20, 145);
         $pdf->Cell(0, $lineHeight, $item['name'], 0, 0);
 
@@ -425,7 +425,7 @@ try {
     // Line after items
     $pdf->SetLineWidth(0.1);
     $pdf->SetDrawColor(158, 158, 158); // Set line color to rgba(158, 158, 158, 1)
-    $pdf->Line(20, $y + 9.5, 190, $y + 9.5);
+    $pdf->Line(20, $y + 10, 190, $y + 10);
     $pdf->SetTextColor(0, 0, 0); // Reset text color to black
 
 
@@ -489,7 +489,7 @@ try {
     $yPos += 7;
 
     $pdf->SetXY(25, $yPos);
-    $pdf->Cell(0, 10, 'ACCOUNT NAME: The FlightsHub Australia PYT LTD', 0, 1);
+    $pdf->Cell(0, 10, 'ACCOUNT NAME: The FlightsHub Australia PYT. LTD.', 0, 1);
     $yPos += 5;
     $pdf->SetTextColor(14, 139, 206);
     $pdf->SetXY(25, $yPos);
@@ -540,7 +540,6 @@ try {
             $pdf->Image($stampPath, 60, 145, 80, 35);
         }
     }
-
     // Output final PDF
     $pdf->Output("D", "Final_Invoice_{$invoice['invoice_number']}.pdf");
 
