@@ -431,7 +431,7 @@ try {
 
     // Totals section
     $pdf->SetFont('FuturaBT-Medium', '', 10);
-    $y += 10;
+    $y += 13;
 
     $pdf->SetXY(140, $y);
     $pdf->Cell(0, 5, 'Sub Total:', 0, 0);
