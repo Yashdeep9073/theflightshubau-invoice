@@ -231,7 +231,7 @@ try {
 
     // Render "FLIGHTSHUB" in #f9522b (RGB: 249, 82, 43)
     $pdf->SetTextColor(249, 82, 43); // Set text color to #f9522b
-    $pdf->Cell(27, 10, 'FLIGHTS', 0, 0); // Increased width to 65 for longer text
+    $pdf->Cell(26, 10, 'FLIGHTS', 0, 0); // Increased width to 65 for longer text
 
     $pdf->SetTextColor(14, 139, 206); // Set text color to rgba(14, 139, 206, 1)
     $pdf->Cell(16, 10, 'HUB', 0, 0); // Increased width to 65 for longer text
