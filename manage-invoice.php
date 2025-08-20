@@ -43,6 +43,8 @@ try {
     $linkedin = $emailSettingData['linkedin_url'] ?? 'https://www.linkedin.com/company/vibrantick-infotech-solutions/posts/?feedView=all';
     $instagram = $emailSettingData['ig_url'] ?? ' https://www.instagram.com/vibrantickinfotech/ ';
     $facebook = $emailSettingData['fb_url'] ?? 'https://www.facebook.com/vibranticksolutions/ ';
+    $googleUrl = $emailSettingData['google_url'] ?? 'https://maps.app.goo.gl/7cg1nM5ER1rTybQ18';
+    $whatsappUrl = $emailSettingData['whatsapp_url'] ?? 'https://api.whatsapp.com/send?phone=61451655554';
     $currentYear = date("Y");
 
 
@@ -426,9 +428,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForReminder']
                         <p>{$address1} <a href='mailto:{$supportEmail}'>{$supportEmail}</a></p>
                           <p>ABN No: {$companySettings['bz_number']}</p>
                         <p>
-                            <a href='{$linkedin}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/174/174857.png ' alt='LinkedIn'></a>
-                            <a href='{$instagram}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/2111/2111463.png ' alt='Instagram'></a>
-                            <a href='{$facebook}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/733/733547.png ' alt='Facebook'></a>
+                            <a href='{$linkedin}' target='_blank'><img src='assets/img/icons/linkdin.png ' alt='LinkedIn'></a>
+                            <a href='{$instagram}' target='_blank'><img src='assets/img/icons/instagram.png ' alt='Instagram'></a>
+                            <a href='{$facebook}' target='_blank'><img src='assets/img/icons/facebook.png ' alt='Facebook'></a>
+                            <a href='{$googleUrl}' target='_blank'><img src='assets/img/icons/google.png ' alt='Google'></a>
+                            <a href='{$whatsappUrl}' target='_blank'><img src='assets/img/icons/whatsapp.png ' alt='Whatsapp'></a>
                         </p>
                     </div>
                 </div>
@@ -713,9 +717,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['invoiceIdForSend'])) {
                         <p>{$address1} <a href='mailto:{$supportEmail}'>{$supportEmail}</a></p>
                         <p>ABN No: {$companySettings['bz_number']}</p>
                         <p>
-                            <a href='{$linkedin}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/174/174857.png ' alt='LinkedIn'></a>
-                            <a href='{$instagram}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/2111/2111463.png ' alt='Instagram'></a>
-                            <a href='{$facebook}' target='_blank'><img src='https://cdn-icons-png.flaticon.com/24/733/733547.png ' alt='Facebook'></a>
+                            <a href='{$linkedin}' target='_blank'><img src='assets/img/icons/linkdin.png ' alt='LinkedIn'></a>
+                            <a href='{$instagram}' target='_blank'><img src='assets/img/icons/instagram.png ' alt='Instagram'></a>
+                            <a href='{$facebook}' target='_blank'><img src='assets/img/icons/facebook.png ' alt='Facebook'></a>
+                            <a href='{$googleUrl}' target='_blank'><img src='assets/img/icons/google.png ' alt='Google'></a>
+                            <a href='{$whatsappUrl}' target='_blank'><img src='assets/img/icons/whatsapp.png ' alt='Whatsapp'></a>
+
                         </p>
                     </div>
                 </div>
