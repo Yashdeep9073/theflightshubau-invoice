@@ -378,7 +378,7 @@ try {
 
 
     $y = 135;
-    $lineHeight = 7;
+    $lineHeight = 4;
 
     $passenger_details = json_decode($invoice['passenger_details'], true);
     $total_quantity = 0; // Initialize as integer
@@ -388,7 +388,8 @@ try {
         $total_quantity += (int) $passenger['quantity']; // Sum quantities
         $output[] = $passenger['type'] . '-' . $passenger['quantity']; // Build type-quantity string
     }
-    $result = implode(', ', $output); // Join strings with comma and space
+    $result = implode("\n", $output);
+
 
 
 
@@ -408,8 +409,8 @@ try {
         $pdf->Cell(0, $lineHeight, $item['name'], 0, 0);
 
         $pdf->SetFont('FuturaBT-Medium', '', 8);
-        $pdf->SetXY(90, $y);
-        $pdf->Cell(0, $lineHeight, $result, 0, 0);
+        $pdf->SetXY(90, 130);
+        $pdf->MultiCell(0, $lineHeight, $result, 0, 'L'); // MultiCell allows new lines
 
         $pdf->SetXY(130, $y);
         $pdf->Cell(0, $lineHeight, $currencySymbol . "." . $invoice['total_amount'], 0, 0);
