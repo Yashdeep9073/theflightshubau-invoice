@@ -560,6 +560,12 @@ ob_end_flush();
 
                                         if ($result->num_rows > 0) {
                                             while ($row = $result->fetch_assoc()) {
+
+                                                // Define status
+                                                $status = ($row['created_by'] == $admin)
+                                                    ? "<span class='badge bg-success'>Owned by You</span>"
+                                                    : "<span class='badge bg-warning'>Shared with You</span>";
+
                                                 echo "<tr>
             <td>
                 <label class='checkboxs'>
@@ -569,7 +575,7 @@ ob_end_flush();
             </td>
             <td>" . (!empty($row['folder_name']) ? htmlspecialchars($row['folder_name']) : htmlspecialchars($row['name'])) . "</td>
             <td>" . ucfirst($row['type']) . "</td>
-            <td>" . htmlspecialchars($row['owner_name']) . "</td>
+            <td>" . $status . "</td>
             <td><span class='badge bg-info'>" . htmlspecialchars($row['permission']) . "</span></td>
             <td>" . date('d M Y', strtotime($row['created_at'])) . "</td>
         </tr>";
@@ -579,6 +585,7 @@ ob_end_flush();
                                         }
                                         ?>
                                     </tbody>
+
 
 
                                 </table>
