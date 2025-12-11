@@ -207,9 +207,9 @@ try {
                             </button>
                         <?php endif; ?>
 
-                        <small class="copy-hint">
+                        <!-- <small class="copy-hint">
                             <i class="fas fa-copy"></i> Tip: Select cells → Ctrl+C → Paste in Excel (formatting preserved!)
-                        </small>
+                        </small> -->
                     </div>
                 </div>
 
